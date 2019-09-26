@@ -8,6 +8,8 @@
 
 import Cocoa
 import SwiftUI
+import Combine
+//import "./CoreFunctional"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -39,5 +41,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
+}
+
+class TestCall: ObservableObject {
+    
+    func hello(){
+        print("hello")
+    }
 }
 

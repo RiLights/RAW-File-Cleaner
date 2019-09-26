@@ -3,30 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		991E68AE232F64A800B02FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E68AD232F64A800B02FDE /* AppDelegate.swift */; };
-		991E68B0232F64A800B02FDE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E68AF232F64A800B02FDE /* ContentView.swift */; };
 		991E68B2232F64A900B02FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991E68B1232F64A900B02FDE /* Assets.xcassets */; };
 		991E68B5232F64A900B02FDE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991E68B4232F64A900B02FDE /* Preview Assets.xcassets */; };
 		991E68B8232F64A900B02FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991E68B6232F64A900B02FDE /* Main.storyboard */; };
+		999C6810233603E600D758E9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C680F233603E500D758E9 /* UIView.swift */; };
+		999C681223362CE000D758E9 /* CoreFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C681123362CE000D758E9 /* CoreFunctional.swift */; };
+		99F5A37823370090009DE5D8 /* RAW_File_CleanerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F5A37723370090009DE5D8 /* RAW_File_CleanerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		99F5A37A23370090009DE5D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 991E68A2232F64A800B02FDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 991E68A9232F64A800B02FDE;
+			remoteInfo = "RAW File Cleaner";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		991E68AA232F64A800B02FDE /* RAW File Cleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAW File Cleaner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		991E68AD232F64A800B02FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		991E68AF232F64A800B02FDE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		991E68B1232F64A900B02FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		991E68B4232F64A900B02FDE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		991E68B7232F64A900B02FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		991E68B9232F64A900B02FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991E68BA232F64A900B02FDE /* RAW_File_Cleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RAW_File_Cleaner.entitlements; sourceTree = "<group>"; };
+		999C680F233603E500D758E9 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		999C681123362CE000D758E9 /* CoreFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFunctional.swift; sourceTree = "<group>"; };
+		99F5A37523370090009DE5D8 /* RAW File CleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RAW File CleanerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F5A37723370090009DE5D8 /* RAW_File_CleanerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAW_File_CleanerTests.swift; sourceTree = "<group>"; };
+		99F5A37923370090009DE5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		991E68A7232F64A800B02FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F5A37223370090009DE5D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				991E68AC232F64A800B02FDE /* RAW File Cleaner */,
+				99F5A37623370090009DE5D8 /* RAW File CleanerTests */,
 				991E68AB232F64A800B02FDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				991E68AA232F64A800B02FDE /* RAW File Cleaner.app */,
+				99F5A37523370090009DE5D8 /* RAW File CleanerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,8 +80,9 @@
 		991E68AC232F64A800B02FDE /* RAW File Cleaner */ = {
 			isa = PBXGroup;
 			children = (
+				999C680F233603E500D758E9 /* UIView.swift */,
 				991E68AD232F64A800B02FDE /* AppDelegate.swift */,
-				991E68AF232F64A800B02FDE /* ContentView.swift */,
+				999C681123362CE000D758E9 /* CoreFunctional.swift */,
 				991E68B1232F64A900B02FDE /* Assets.xcassets */,
 				991E68B6232F64A900B02FDE /* Main.storyboard */,
 				991E68B9232F64A900B02FDE /* Info.plist */,
@@ -72,6 +98,15 @@
 				991E68B4232F64A900B02FDE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		99F5A37623370090009DE5D8 /* RAW File CleanerTests */ = {
+			isa = PBXGroup;
+			children = (
+				99F5A37723370090009DE5D8 /* RAW_File_CleanerTests.swift */,
+				99F5A37923370090009DE5D8 /* Info.plist */,
+			);
+			path = "RAW File CleanerTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +129,24 @@
 			productReference = 991E68AA232F64A800B02FDE /* RAW File Cleaner.app */;
 			productType = "com.apple.product-type.application";
 		};
+		99F5A37423370090009DE5D8 /* RAW File CleanerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F5A37C23370090009DE5D8 /* Build configuration list for PBXNativeTarget "RAW File CleanerTests" */;
+			buildPhases = (
+				99F5A37123370090009DE5D8 /* Sources */,
+				99F5A37223370090009DE5D8 /* Frameworks */,
+				99F5A37323370090009DE5D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99F5A37B23370090009DE5D8 /* PBXTargetDependency */,
+			);
+			name = "RAW File CleanerTests";
+			productName = "RAW File CleanerTests";
+			productReference = 99F5A37523370090009DE5D8 /* RAW File CleanerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -107,10 +160,14 @@
 					991E68A9232F64A800B02FDE = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					99F5A37423370090009DE5D8 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 991E68A9232F64A800B02FDE;
+					};
 				};
 			};
 			buildConfigurationList = 991E68A5232F64A800B02FDE /* Build configuration list for PBXProject "RAW File Cleaner" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -123,6 +180,7 @@
 			projectRoot = "";
 			targets = (
 				991E68A9232F64A800B02FDE /* RAW File Cleaner */,
+				99F5A37423370090009DE5D8 /* RAW File CleanerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -138,6 +196,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99F5A37323370090009DE5D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -145,12 +210,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991E68B0232F64A800B02FDE /* ContentView.swift in Sources */,
+				999C6810233603E600D758E9 /* UIView.swift in Sources */,
 				991E68AE232F64A800B02FDE /* AppDelegate.swift in Sources */,
+				999C681223362CE000D758E9 /* CoreFunctional.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F5A37123370090009DE5D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F5A37823370090009DE5D8 /* RAW_File_CleanerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99F5A37B23370090009DE5D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 991E68A9232F64A800B02FDE /* RAW File Cleaner */;
+			targetProxy = 99F5A37A23370090009DE5D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		991E68B6232F64A900B02FDE /* Main.storyboard */ = {
@@ -319,6 +401,44 @@
 			};
 			name = Release;
 		};
+		99F5A37D23370090009DE5D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "RAW File CleanerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ostap.RAW-File-CleanerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RAW File Cleaner.app/Contents/MacOS/RAW File Cleaner";
+			};
+			name = Debug;
+		};
+		99F5A37E23370090009DE5D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "RAW File CleanerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Ostap.RAW-File-CleanerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RAW File Cleaner.app/Contents/MacOS/RAW File Cleaner";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +456,15 @@
 			buildConfigurations = (
 				991E68BE232F64A900B02FDE /* Debug */,
 				991E68BF232F64A900B02FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99F5A37C23370090009DE5D8 /* Build configuration list for PBXNativeTarget "RAW File CleanerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F5A37D23370090009DE5D8 /* Debug */,
+				99F5A37E23370090009DE5D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
