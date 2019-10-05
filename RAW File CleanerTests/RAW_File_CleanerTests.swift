@@ -26,7 +26,7 @@ class RAW_File_CleanerTests: XCTestCase {
     func testApplyFilterBasic() {
         let spares:[String] = ["dd.CR2"]
         self.directory_items += spares
-        let res = apply_filter(self.directory_items,raw_name: "CR2")
+        let res = raw_filter(self.directory_items,raw_name: "CR2")
         
         XCTAssertEqual(spares, res)
     }
@@ -34,7 +34,7 @@ class RAW_File_CleanerTests: XCTestCase {
     func testApplyFilterRAW() {
         let spares:[String] = ["dd.CR2"]
         self.directory_items += spares
-        let res = apply_filter(self.directory_items,raw_name: "RAW")
+        let res = raw_filter(self.directory_items,raw_name: "RAW")
         
         XCTAssertEqual([], res)
     }
@@ -42,7 +42,7 @@ class RAW_File_CleanerTests: XCTestCase {
     func testApplyFilterLowercase() {
         let spares:[String] = ["dd.cr2"]
         self.directory_items += spares
-        let res = apply_filter(self.directory_items,raw_name: "CR2")
+        let res = raw_filter(self.directory_items,raw_name: "CR2")
         
         XCTAssertEqual(spares, res)
     }
@@ -50,7 +50,7 @@ class RAW_File_CleanerTests: XCTestCase {
     func testApplyFilterMultyFiles() {
         let spares:[String] = ["dd.cr2","dd.CR2","qwe.CR2","qwer.CR2"]
         self.directory_items += spares
-        let res = apply_filter(self.directory_items,raw_name: "CR2")
+        let res = raw_filter(self.directory_items,raw_name: "CR2")
         
         XCTAssertEqual(spares, res)
     }
@@ -59,7 +59,7 @@ class RAW_File_CleanerTests: XCTestCase {
         let _spares:[String] = ["name.nk","somefolder"]
         self.directory_items += spares
         self.directory_items += _spares
-        let res = apply_filter(self.directory_items,raw_name: "CR2")
+        let res = raw_filter(self.directory_items,raw_name: "CR2")
         
         XCTAssertEqual(spares, res)
     }
@@ -67,7 +67,7 @@ class RAW_File_CleanerTests: XCTestCase {
     func testApplyFilterFullPath() {
         let spares:[String] = ["/vol/mac/dd.CR2","/vol/mac/qwer.CR2"]
         self.directory_items += spares
-        let res = apply_filter(self.directory_items,raw_name: "CR2")
+        let res = raw_filter(self.directory_items,raw_name: "CR2")
         
         XCTAssertEqual(spares, res)
     }

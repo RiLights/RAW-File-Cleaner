@@ -4,83 +4,49 @@
 //
 //  Created by Yaryna Pochtarenko on 16/09/19.
 //  Copyright © 2019 Ostap Pochtarenko. All rights reserved.
-//
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//Filter RAW files based on present jpg files in the same directory.
+//Spare RAW files will be removed.
 import SwiftUI
-//import CoreFunctional
-
-func testV(){
-    print("Hello")
-}
 
 struct MainView: View {
-    @State private var showingAlert = false
-    @State var showModalView = false
-    @EnvironmentObject var userData: TestCall
+    @State var selected_url: String = ""
+    @ObservedObject var filter_model = FilterModel()
     
     var alert: Alert {
-        Alert(title: Text("iOScreator"), message: Text("Hello SwiftUI"), dismissButton: .default(Text("Dismiss")))
+        Alert(title: Text(filter_model.alert_title), message: Text(filter_model.message), dismissButton: .default(Text("Ok")))
     }
 
     var body: some View {
         Section{
             VStack{
-                DirectorySelect()
+                DirectorySelect(selected_url: $selected_url)
                     .padding(.horizontal, 20)
                     .padding(.top, 40)
                 
-                RAWExtension()
+                RAWExtension(filter_model: self.filter_model)
                     .frame(width:195)
                 
                 Spacer()
                 HStack{
                     Spacer()
-                    Button(action: {testPrint()}) { //{self.showingAlert = true}
+                    Button(action: {self.filter_model.apply_filter(self.selected_url)}) {
                         Text("Apply")
                     }
                     .padding()
-                    .alert(isPresented: $showingAlert, content: { self.alert })
+                    .alert(isPresented: $filter_model.show_popup, content: { self.alert })
                 }
             }
         }.frame(width: 400, height: 200)
     }
 }
 
-struct ModalView: View {
-    @Environment(\.presentationMode) var presentation
-    
-    var body: some View {
-        ZStack {
-            Color.blue.edgesIgnoringSafeArea(.all)
-            Text("Hello World")
-            Button("Dismiss") {
-                self.presentation.wrappedValue.dismiss()
-            }
-        }.frame(width: 300, height: 100)
-    }
-}
-struct ModalView2: View {
-    @Environment(\.presentationMode) var presentation
-    let message: String
-
-    var body: some View {
-        VStack {
-            Text(message)
-            Button("Dismiss") {
-                self.presentation.wrappedValue.dismiss()
-            }
-        }
-    }
-}
-
 struct DirectorySelect: View {
-    @State var selectedURL: URL?
-    @State private var name: String = ""
+    @Binding var selected_url: String
     
     var body: some View {
         VStack {
             HStack{
-                TextField("Directory", text: $name)
+                TextField("Directory", text: $selected_url)
                 Button(action: {
                     let dialog = NSOpenPanel()
                     dialog.title                   = "Choose a directory";
@@ -93,8 +59,7 @@ struct DirectorySelect: View {
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         let result = dialog.runModal()
                         if result == .OK {
-                            //self.selectedURL = dialog.url
-                            self.name = dialog.url!.absoluteString
+                            self.selected_url = dialog.url!.path
                         }
                     }
                 }) {
@@ -106,19 +71,15 @@ struct DirectorySelect: View {
 }
 
 struct RAWExtension: View {
-    @State private var file_extension = 0
+    @ObservedObject var filter_model: FilterModel
     
     var body: some View {
-        Picker(selection: $file_extension, label: Text("RAW Extension")) {
-            Text("CR2").tag(0)
-            Text("CR3").tag(2)
-            Text("NEF").tag(3)
-            Text("NRW").tag(4)
-            Text("DNG").tag(5)
-            Text("GPR").tag(6)
-            Text("RAW").tag(7)
-            Text("RAF").tag(8)
-            Text("ORF").tag(9)
+        Picker(selection: $filter_model.selected_raw_extension,
+               label: Text("RAW Extension")) {
+            ForEach(0 ..< filter_model.raw_extensions.count) {
+                Text(self.filter_model.raw_extensions[$0])
+
+            }
         }
     }
 }
@@ -128,3 +89,5 @@ struct ContentView_Previews: PreviewProvider {
         MainView()
     }
 }
+
+

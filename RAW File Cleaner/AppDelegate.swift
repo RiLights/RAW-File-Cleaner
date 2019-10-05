@@ -9,7 +9,6 @@
 import Cocoa
 import SwiftUI
 import Combine
-//import "./CoreFunctional"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -30,23 +29,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.titlebarAppearsTransparent = true
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-        //print("terminate debug")
-        //NSApplication.shared.terminate(self)
-    }
-
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         NSApplication.shared.terminate(self)
         return true
     }
     
-}
+    func dialogOKCancel(question: String, text: String) {
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        if alert.runModal() == .alertFirstButtonReturn{
+            return
+        }
+    }
+    @IBAction func help(_ sender: Any) {
+        print("help")
+        dialogOKCancel(question: "Help",text: """
+            Filtering RAW files based on present jpg files
+            in the same directory.
 
-class TestCall: ObservableObject {
-    
-    func hello(){
-        print("hello")
+            Spare RAW files will be in recycle bin.
+""")
     }
 }
-

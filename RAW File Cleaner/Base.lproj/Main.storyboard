@@ -35,7 +35,7 @@
                                         <menuItem title="RAW File Cleaner Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <attributedString key="attributedTitle"/>
                                             <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <action selector="help:" target="Voe-Tx-rLC" id="37P-aS-1YV"/>
                                             </connections>
                                         </menuItem>
                                     </items>
