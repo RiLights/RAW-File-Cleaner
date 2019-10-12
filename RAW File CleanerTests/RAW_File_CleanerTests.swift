@@ -71,6 +71,17 @@ class RAW_File_CleanerTests: XCTestCase {
         
         XCTAssertEqual(spares, res)
     }
+    
+    func testCapitalCase() {
+        self.directory_items = ["bobo01.JPG","bobo01.CR2",
+                               "bobo02.JPG","bobo02.CR2",
+                               "dodo01.JPG","dodo01.CR2"]
+        let spares:[String] = ["dd.CR2","qwer.CR2"]
+        self.directory_items += spares
+        let res = raw_filter(self.directory_items,raw_name: "CR2")
+        
+        XCTAssertEqual(spares, res)
+    }
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.
 //        measure {

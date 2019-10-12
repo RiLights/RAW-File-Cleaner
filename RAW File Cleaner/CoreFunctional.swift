@@ -22,8 +22,11 @@ func raw_filter(_ directory_items:[String],raw_name:String) ->[String]{
         if (pathExtention == lraw_ext) {raw_ext = lraw_ext}
         if (pathExtention == uraw_ext) {raw_ext = uraw_ext}
         if raw_ext != nil{
-            let gen_name = filename.deletingPathExtension + ".jpg"
-            if !(directory_items.contains(gen_name)) {
+            let lower_gen_name = filename.deletingPathExtension + ".jpg"
+            let upper_gen_name = filename.deletingPathExtension + ".JPG"
+            //print("gen_name",gen_name)
+            if !(directory_items.contains(lower_gen_name) ||
+                directory_items.contains(upper_gen_name)) {
                 filtered.append(filename as String)
             }
         }

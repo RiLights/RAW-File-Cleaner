@@ -28,6 +28,10 @@ struct MainView: View {
                 
                 Spacer()
                 HStack{
+                    Text("©2019 lovemiphoto.com")
+                        .padding()
+                        .foregroundColor(.secondary)
+                        .font(.system(size: 10))
                     Spacer()
                     Button(action: {self.filter_model.apply_filter(self.selected_url)}) {
                         Text("Apply")
